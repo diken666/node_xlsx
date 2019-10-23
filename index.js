@@ -6,7 +6,7 @@ const { year, month, date, hour, minute, second } = require('./js/date');
 // 读取文件
 try {
     console.log(`开始读取【${fileName}.xlsx】`);
-    let list = xlsx.parse(`./inputFiles/${fileName}1.xlsx`);
+    let list = xlsx.parse(`./inputFiles/${fileName}.xlsx`);
     console.log(list[0].data);
 }
 catch (e) {
