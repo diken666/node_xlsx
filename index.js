@@ -5,12 +5,12 @@ const { year, month, date, hour, minute, second } = require('./js/date');
 
 // 读取文件
 try {
-    let list = xlsx.parse(`../inputFiles/${fileName}.xlsx`);
+    console.log(`开始读取【${fileName}.xlsx】`);
+    let list = xlsx.parse(`./inputFiles/${fileName}1.xlsx`);
     console.log(list[0].data);
 }
 catch (e) {
     console.log(`读取文件失败，请确保【inputFiles】文件夹下，存在【${fileName}】表格文件`);
-    console.log(e);
 }
 
 
