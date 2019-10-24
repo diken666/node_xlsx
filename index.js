@@ -6,7 +6,7 @@ const { year, month, date, hour, minute, second } = require('./js/date');
 // 读取文件
 try {
     if ( fileName.endsWith('.xls') || fileName.endsWith('.xlsx') ) {
-        console.log("\033[40;32m开始读取【"+`${fileName}`+"】...\033[40;37m");
+        console.log("\033[40;32m开始读取【" + ${fileName} + "】...\033[40;37m");
         let list = xlsx.parse(`./inputFiles/${fileName}`);
         console.log(list[0].data);
     }
@@ -23,7 +23,7 @@ try {
 
 }
 catch (e) {
-    console.log("\033[40;31m"+e.toString()+"\033[40;37m")
+    console.log("\033[40;31m" + e.toString() + "\033[40;37m")
 }
 
 
