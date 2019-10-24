@@ -5,12 +5,25 @@ const { year, month, date, hour, minute, second } = require('./js/date');
 
 // 读取文件
 try {
-    console.log(`开始读取【${fileName}.xlsx】`);
-    let list = xlsx.parse(`./inputFiles/${fileName}.xlsx`);
-    console.log(list[0].data);
+    if ( fileName.endsWith('.xls') || fileName.endsWith('.xlsx') ) {
+        console.log("\033[40;32m开始读取【"+`${fileName}`+"】...\033[40;37m");
+        let list = xlsx.parse(`./inputFiles/${fileName}`);
+        console.log(list[0].data);
+    }
+    else {
+        let len = fileName.split('.').length;
+        let fileType = fileName.split('.')[len - 1];
+        if ( fileType && len !== 1 ) {
+            console.log("\033[40;31m不支持读取【"+`${fileType}`+"\033[40;31m】文件类型\033[40;37m")
+        } else {
+            console.log('\033[40;31m配置文件名时，未写入文件后缀名\033[40;37m')
+        }
+
+    }
+
 }
 catch (e) {
-    console.log(`读取文件失败，请确保【inputFiles】文件夹下，存在【${fileName}】表格文件`);
+    console.log("\033[40;31m"+e.toString()+"\033[40;37m")
 }
 
 
