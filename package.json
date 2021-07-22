@@ -18,7 +18,7 @@
   "homepage": "https://github.com/diken666/node_xlsx#readme",
   "dependencies": {
     "node-xlsx": "^0.15.0",
-    "xlsx": "^0.15.1"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {}
 }
